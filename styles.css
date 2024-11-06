@@ -1,0 +1,100 @@
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff0f5;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Estilo para botão de surpresa */
+button {
+    background-color: #ff6fa1;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e05487;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    color: #d147a3;
+}
+
+#resultMessage {
+    font-size: 1.2rem;
+    color: #ff6fa1;
+    margin-top: 1.5rem;
+}
+
+/* Botões "SIM" e "NÃO" */
+#responseButtons button {
+    margin: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+#noButton {
+    position: relative;
+}
+
+/* Animação dos corações flutuantes */
+.hearts::before,
+.hearts::after {
+    content: '💖';
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    animation: float 5s infinite linear;
+}
+
+.hearts::before {
+    left: 20%;
+    animation-duration: 4s;
+}
+
+.hearts::after {
+    left: 80%;
+    animation-duration: 6s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
