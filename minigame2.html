@@ -9,8 +9,8 @@
 <body>
     <div id="game-container">
         <header>
-            <h1>Kill emilly</h1>
-            <p id="intro-text">Chegue a 100 pontos</p>
+            <h1>Mate a emy</h1>
+            <p id="intro-text">Chegue a 50 pontos</p>
         </header>
 
         <!-- Área do jogo -->
@@ -23,13 +23,19 @@
         <p id="score">Pontuação: 0</p>
         
         <!-- Mensagem de parabéns -->
-        <p id="parabens" style="display: none;">🎉 Parabéns! Você matou a emilly! aguarde 10 segundos para matar novamente🎉</p>
+        <p id="parabens" style="display: none;"> Parabéns você matou a emilly! ESCOLHA: 2 REAL OU UM BEIJO MISTERIOSO aguarde 10 segundos para jogar novamente</p>
         
         <!-- Botão para voltar à página principal -->
         <button id="btn-voltar" onclick="voltarParaHome()" style="display: none;">Voltar à Página Principal</button>
     </div>
 
     <script>
+        function tocarSom(somEmilly) {
+            var som = document.getElementById("somEmilly");
+            som.play(somEmilly); // Toca o som
+            adicionarPontos();
+        }
+    
         let score = 0;
         const bubble = document.getElementById('bubble');
         const scoreDisplay = document.getElementById('score');
@@ -48,7 +54,7 @@
             score++;
             scoreDisplay.innerText = 'Pontuação: ' + score;
 
-            if (score >= 100) {
+            if (score >= 50) {
                 parabensMessage.style.display = 'block'; // Mostra a mensagem de parabéns
                 btnVoltar.style.display = 'block'; // Exibe o botão de voltar à página principal
                 setTimeout(resetGame, 10000); // Reinicia o jogo após 2 segundos

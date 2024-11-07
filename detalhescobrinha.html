@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Minigame 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Resetando algumas margens e fontes */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Corpo da pÃ¡gina */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f8fb;
+        color: #333;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Estilo do cabeÃ§alho */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1e2a38;
+        padding: 15px 30px;
+        color: white;
+        height: 80px; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Logo */
+    .logo img {
+        max-height: 100%;
+        width: 150px;
+    }
+
+    /* Menu hamburguer */
+    .menu-hamburguer {
+        position: relative;
+    }
+
+    .menu-icon {
+        font-size: 28px;
+        cursor: pointer;
+        display: block;
+        color: #fff;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #2f3b49;
+        border-radius: 8px;
+        padding: 10px;
+        list-style: none;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Exibe o menu quando a classe menu-ativo estÃ¡ presente */
+    .menu-ativo {
+        display: block;
+    }
+
+    /* Estilo do botÃ£o de jogar */
+    button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin-top: 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Efeito ao passar o mouse sobre o botÃ£o */
+    button:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    /* Efeito de foco */
+    button:focus {
+        outline: none;
+    }
+
+    /* TÃ­tulo da pÃ¡gina */
+    h1 {
+        color: #333;
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    /* DescriÃ§Ã£o */
+    p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 30px;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo do Site">
+        </div>
+        <nav class="menu-hamburguer">
+            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#jogos">Vazio</a></li>
+                <li><a href="https://wa.link/4ynl0l">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>COBRINHA</h1>
+        <p>SLA COMO JOGA KKKKK</p>
+        <button onclick="abrirMinigame1()">JOGAR</button>
+    </main>
+
+    <script>
+        function abrirMinigame1() {
+            window.open("https://playsnake.org/", "_blank", "width=800,height=600");
+        }
+         
+        function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.classList.toggle("menu-ativo");
+        }
+    </script>
+</body>
+</html>

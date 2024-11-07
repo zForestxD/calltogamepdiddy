@@ -48,10 +48,11 @@ header {
 .menu {
     display: none;
     position: absolute;
-    right: 0;
-    background-color: #2f3b49;
+    top: 67px;    
+    right: 75px;
+    background-color: black;
     border-radius: 8px;
-    padding: 10px;
+    padding: 50px;
     list-style: none;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -76,14 +77,14 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 /* Estilo dos cards */
 .card {
     background-color: #fff;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
@@ -103,9 +104,9 @@ header {
 
 /* Estilo do título do card */
 .card h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #333;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 /* Estilo da descrição do card */
@@ -118,6 +119,7 @@ header {
 /* Estilo do botão de "Ver Detalhes" */
 .card .btn {
     background-color: #28a745;
+    top: 800rem;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -126,13 +128,12 @@ header {
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 30px; /* Aumenta o espaço acima do botão */
     text-decoration: none;
 }
 
 .card .btn:hover {
     background-color: #218838;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 
