@@ -6,19 +6,21 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    background: linear-gradient(to right, #ff00ff, #ff99ff);
     overflow: hidden;
     color: #333;
+    position: relative;
 }
 
+/* Container principal */
 .container {
     text-align: center;
-    background-color: #fff0f5;
+    background-color: rgba(255, 240, 245, 0.9);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -26,22 +28,42 @@ body {
     width: 90%;
 }
 
-/* Estilo para botão de surpresa */
+
+/* Título com gradiente */
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #ff6fa1, #d147a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Texto de descrição */
+p {
+    font-size: 0.6rem;
+    color: crimson;
+    margin-bottom: 1.89rem;
+}
+
+/* Botão de surpresa com efeito hover */
 button {
-    background-color: #ff6fa1;
+    background: linear-gradient(to right, #ff6fa1, #d147a3);
     color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-size: 1rem;
+    border: 20px;
+    padding: 0.60rem 1.9rem;
+    border-radius: 9px;
+    font-size: 1.05rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #e05487;
+    transform: scale(1.10);
 }
 
+/* Ocultar conteúdo até ser exibido */
 .hidden {
     display: none;
 }
@@ -49,7 +71,11 @@ button:hover {
 #message {
     margin-top: 1.5rem;
     font-size: 1.25rem;
-    color: #d147a3;
+    font-weight: bold;
+    color: deeppink;
+    background: linear-gradient(to right, #ff6fa1, #ff9a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #resultMessage {
@@ -62,20 +88,28 @@ button:hover {
 #responseButtons button {
     margin: 1rem;
     padding: 0.75rem 1.5rem;
-}
-
-#noButton {
-    position: relative;
+    font-weight: bold;
 }
 
 /* Animação dos corações flutuantes */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* impede interação */
+    z-index: -1; /* coloca no background */
+}
+
 .hearts::before,
 .hearts::after {
-    content: '💖';
+    content: '🤍';
     font-size: 2rem;
     position: absolute;
-    top: 0;
-    animation: float 5s infinite linear;
+    top: 100%;
+    animation: float 7s infinite linear;
+    opacity: 0.3;
 }
 
 .hearts::before {
@@ -94,7 +128,7 @@ button:hover {
         opacity: 1;
     }
     100% {
-        transform: translateY(-100vh) scale(0.5);
+        transform: translateY(-100vh) scale(0.9);
         opacity: 0;
     }
 }
