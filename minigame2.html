@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minigame 1: Matar a emilly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Kill emilly</h1>
+            <p id="intro-text">Chegue a 100 pontos</p>
+        </header>
+
+        <!-- Área do jogo -->
+        <div id="game-area">
+            <!-- A imagem que será clicada pelo jogador -->
+            <img id="bubble" src="killemilly.png" alt="Bolha" onclick="estourarBolha()">
+        </div>
+
+        <!-- Pontuação -->
+        <p id="score">Pontuação: 0</p>
+        
+        <!-- Mensagem de parabéns -->
+        <p id="parabens" style="display: none;">🎉 Parabéns! Você matou a emilly! aguarde 10 segundos para matar novamente🎉</p>
+        
+        <!-- Botão para voltar à página principal -->
+        <button id="btn-voltar" onclick="voltarParaHome()" style="display: none;">Voltar à Página Principal</button>
+    </div>
+
+    <script>
+        let score = 0;
+        const bubble = document.getElementById('bubble');
+        const scoreDisplay = document.getElementById('score');
+        const parabensMessage = document.getElementById('parabens');
+        const gameArea = document.getElementById('game-area');
+        const btnVoltar = document.getElementById('btn-voltar');
+        
+        // Função para atualizar a posição da imagem aleatoriamente
+        function reposicionarBolha() {
+            bubble.style.top = Math.random() * (gameArea.clientHeight - 100) + 'px';
+            bubble.style.left = Math.random() * (gameArea.clientWidth - 100) + 'px';
+        }
+
+        // Função que será chamada quando o jogador clicar na imagem
+        function estourarBolha() {
+            score++;
+            scoreDisplay.innerText = 'Pontuação: ' + score;
+
+            if (score >= 100) {
+                parabensMessage.style.display = 'block'; // Mostra a mensagem de parabéns
+                btnVoltar.style.display = 'block'; // Exibe o botão de voltar à página principal
+                setTimeout(resetGame, 10000); // Reinicia o jogo após 2 segundos
+            } else {
+                reposicionarBolha(); // Reposiciona a imagem aleatoriamente
+            }
+        }
+
+        // Função para reiniciar o jogo
+        function resetGame() {
+            score = 0;
+            scoreDisplay.innerText = 'Pontuação: ' + score;
+            parabensMessage.style.display = 'none'; // Esconde a mensagem de parabéns
+            btnVoltar.style.display = 'none'; // Esconde o botão de voltar
+            reposicionarBolha(); // Reposiciona a bolha para começar o jogo novamente
+        }
+
+        // Função para voltar à página principal
+        function voltarParaHome() {
+            window.location.href = "index.html"; // Redireciona para a página principal
+        }
+
+        // Inicializa o jogo com a bolha no início
+        window.onload = reposicionarBolha;
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f8fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        #game-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 650px;
+            margin-top: 20px;
+        }
+
+        header h1 {
+            color: #4caf50;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        #intro-text {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        #game-area {
+            width: 100%;
+            height: 350px;
+            border: 2px dashed #4caf50;
+            position: relative;
+            margin-top: 20px;
+            background-color: #fafafa;
+            border-radius: 8px;
+        }
+
+        #bubble {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            cursor: pointer;
+            transition: top 0.3s, left 0.3s;
+            border-radius: 50%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #score {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #parabens {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #btn-voltar {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 30px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        #btn-voltar:hover {
+            background-color: #0056b3;
+        }
+
+        #btn-voltar:focus {
+            outline: none;
+        }
+    </style>
+</body>
+</html>

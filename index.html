@@ -3,62 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emimarryme?</title>
+    <title>Site de Minigames</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <!-- Header com logo em PNG e menu hambúrguer -->
     <header>
-        <div class="logo">CREATED BY: VT</div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <nav class="menu" id="menu">
-            <ul>
-                <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#somenteteste">TESTE</a></li>
-                <li><a href="https://w.app/zQlmZM">CONTATO</a></li>
+        <div class="logo">
+            <img src="logo.png" alt="Logo do Site">
+        </div>
+        <nav class="menu-hamburguer">
+            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#jogos">Jogos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Música de fundo -->
-    <audio id="backgroundMusic" loop autoplay>
-        <source src="mscjao.mp3" type="audio/mp3">
-        Seu navegador não suporta áudio.
-    </audio>
+    <!-- Conteúdo principal com cards -->
+    <main>
+        <section class="cards-container">
+            <!-- Exemplo de um card com link para a página de detalhes -->
+            <div class="card">
+                <img src="image2.png" alt="P. Diddy" class="card-img">
+                <h2>KILL DIDDY</h2>
+                <a href="detalhes1.html" class="btn">JOGAR</a>
+            </div>
+            <!-- Adicione mais cards para outros minigames -->
+            <div class="card">
+                <img src="killemilly.png" alt="Emilly" class="card-img">
+                <h2>KILL EMILLY</h2>
+                <a href="detalhes2.html" class="btn">JOGAR</a>
+            </div>   
+            <!-- Card do jogo incorporado -->
+            <div class="card">
+                <img src="lua.jpg" alt="Jogo Exemplo" class="card-img">
+                <h2>JOGO DA VÉIA</h2>
+                <a href="detalhes3.html" class="btn">JOGAR</a>
+            </div>  
+        </section>
+    </main>
 
-    <!-- Conteúdo principal -->
-    <div class="container">
-        <h1>CLIQUE NO BOTÃO</h1>
-        <p>SITE 100% SEGURO FONTE: GLOBE</p>
-        
-        <button id="surpriseButton" class="block-button">
-            <span class="block-icon"></span> CLIQUE AQUI
-        </button>
-        
-        <p id="message" class="hidden">BO JOGAR KRAI</p>
-        <div id="responseButtons" class="hidden">
-            <button id="yesButton">SIM</button>
-            <button id="noButton">NÃO</button>
-        </div>
-        
-        <p id="resultMessage" class="hidden"></p>
-    </div>
-
-    <!-- Imagens PNG flutuantes -->
-    <div class="floating-images">
-        <img src="image1.png" alt="Imagem 1" class="image1">
-        <img src="image2.png" alt="Imagem 2" class="image2">
-    </div>
-
-    <!-- Footer -->
+    <!-- Footer não fixo -->
     <footer>
-        <p>&copy; 2024 Todos os direitos reservados by: Victor Diddy Santxna</p>
+        <p>&copy; 2024 Todos os direitos reservados by: vt_santxna</p>
     </footer>
 
-    <!-- Efeitos de corações flutuantes -->
-    <div class="hearts"></div>
-
-    <!-- Script JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
