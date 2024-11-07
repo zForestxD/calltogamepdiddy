@@ -1,8 +1,159 @@
-/* Estilos básicos */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff00ff, #ff99ff);
+    color: #333;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 63px;
+    background: linear-gradient(to right, #ff6fa1, #d147a3);
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    margin: 0.5rem 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu.show {
+    display: block;
+    position: absolute;
+    right: 7.4rem;
+    top: 5rem;
+    background: rgba(255, 105, 180, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 240, 245, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #ff6fa1, #d147a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+button {
+    background: linear-gradient(to right, #ff6fa1, #d147a3);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.9rem;
+    border-radius: 9px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e05487;
+    transform: scale(1.10);
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ff00ff;
+    background: linear-gradient(to right, #ff6fa1, #ff9a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#resultMessage {
+    font-size: 1.2rem;
+    color: #ff6fa1;
+    margin-top: 1.5rem;
+}
+
+footer {
+    position: flex;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, #ff6fa1, #d147a3);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hearts::before,
+.hearts::after {
+    content: '🤍';
+    font-size: 2rem;
+    position: absolute;
+    top: 100%;
+    animation: float 7s infinite linear;
+    opacity: 0.3;
+}
+
+.hearts::before { left: 20%; animation-duration: 4s; }
+.hearts::after { left: 80%; animation-duration: 6s; }
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.9); opacity: 0; }
 }
 
 body {
@@ -17,118 +168,46 @@ body {
     position: relative;
 }
 
-/* Container principal */
-.container {
-    text-align: center;
-    background-color: rgba(255, 240, 245, 0.9);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    width: 90%;
-}
-
-
-/* Título com gradiente */
-h1 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    background: linear-gradient(to right, #ff6fa1, #d147a3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Texto de descrição */
-p {
-    font-size: 0.6rem;
-    color: crimson;
-    margin-bottom: 1.89rem;
-}
-
-/* Botão de surpresa com efeito hover */
-button {
-    background: linear-gradient(to right, #ff6fa1, #d147a3);
-    color: white;
-    border: 20px;
-    padding: 0.60rem 1.9rem;
-    border-radius: 9px;
-    font-size: 1.05rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background-color: #e05487;
-    transform: scale(1.10);
-}
-
-/* Ocultar conteúdo até ser exibido */
-.hidden {
-    display: none;
-}
-
-#message {
-    margin-top: 1.5rem;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: deeppink;
-    background: linear-gradient(to right, #ff6fa1, #ff9a9e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#resultMessage {
-    font-size: 1.2rem;
-    color: #ff6fa1;
-    margin-top: 1.5rem;
-}
-
-/* Botões "SIM" e "NÃO" */
-#responseButtons button {
-    margin: 1rem;
-    padding: 0.75rem 1.5rem;
-    font-weight: bold;
-}
-
-/* Animação dos corações flutuantes */
-.hearts {
+/* Vídeo de fundo */
+.video-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* impede interação */
-    z-index: -1; /* coloca no background */
+    z-index: -2; /* Fica atrás de tudo, incluindo as imagens */
 }
 
-.hearts::before,
-.hearts::after {
-    content: '🤍';
-    font-size: 2rem;
+/* Container principal */
+
+/* Imagens flutuantes acima do conteúdo e atrás do vídeo */
+.floating-images {
     position: absolute;
-    top: 100%;
-    animation: float 7s infinite linear;
-    opacity: 0.3;
+    top: 75%; /* Ajuste a posição para onde as imagens devem aparecer */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0; /* Coloca as imagens entre o conteúdo e o vídeo de fundo */
 }
 
-.hearts::before {
-    left: 20%;
-    animation-duration: 4s;
+.floating-images img {
+    position: absolute;
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
 }
 
-.hearts::after {
-    left: 80%;
-    animation-duration: 6s;
+.floating-images .image1 {
+    top: -28px; /* Distância vertical */
+    left: 113px; /* Distância horizontal */
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) scale(0.9);
-        opacity: 0;
-    }
+.floating-images .image2 {
+    top: 22px; /* Distância vertical */
+    right: 115px; /* Distância horizontal */
+}
+
+/* Animação para dar um efeito ao passar o mouse */
+.floating-images img:hover {
+    transform: scale(1.1);
 }

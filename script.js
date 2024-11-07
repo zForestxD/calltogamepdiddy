@@ -1,3 +1,8 @@
+
+document.getElementById("hamburger").addEventListener("click", function() {
+    document.getElementById("menu").classList.toggle("show");
+});
+
 document.getElementById("surpriseButton").addEventListener("click", function() {
     document.getElementById("message").classList.remove("hidden");
     document.getElementById("responseButtons").classList.remove("hidden");
@@ -5,13 +10,12 @@ document.getElementById("surpriseButton").addEventListener("click", function() {
 
 document.getElementById("yesButton").addEventListener("click", function() {
     const resultMessage = document.getElementById("resultMessage");
-    resultMessage.textContent = "Muito bem! O p. Diddy ja esta se afastando da sua casa!";
+    resultMessage.textContent = "Muito bem! O p. Diddy já está se afastando da sua casa!";
     resultMessage.classList.remove("hidden");
     document.getElementById("responseButtons").classList.add("hidden");
 });
 
 document.getElementById("noButton").addEventListener("mouseenter", function() {
-  
     const noButton = document.getElementById("noButton");
     const container = document.querySelector(".container");
     const containerRect = container.getBoundingClientRect();
@@ -26,7 +30,7 @@ document.getElementById("noButton").addEventListener("mouseenter", function() {
 
 document.getElementById("noButton").addEventListener("click", function() {
     const resultMessage = document.getElementById("resultMessage");
-    resultMessage.textContent = "Escolha errada! O p. diddy vai aparecer atras de vc em 3...2...1..";
+    resultMessage.textContent = "Escolha errada! O p. Diddy vai aparecer atrás de você em 3,2,1...";
     resultMessage.classList.remove("hidden");
     document.getElementById("responseButtons").classList.add("hidden");
 });
