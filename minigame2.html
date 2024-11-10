@@ -9,25 +9,70 @@
 <body>
     <div id="game-container">
         <header>
-            <h1>Mate a emy</h1>
-            <p id="intro-text">Desativado até ela responder👍</p>
+            <h1>MATE A EMY</h1>
+            <p id="intro-text">Só Clicar nela🤧👍</p>
         </header>
 
         <!-- Área do jogo -->
         <div id="game-area">
             <!-- A imagem que será clicada pelo jogador -->
-            <img id="bubble" src="killemilly.png" alt="Bolha" onclick="estourarBolha()">
+            <img id="bubble" src="killemilly.png" alt="Emy" onclick="estourarBolha()">
         </div>
 
         <!-- Pontuação -->
-        <p id="score">Pontuação: 0</p>
+        <p id="score">Pontos: 0</p>
         
         <!-- Mensagem de parabéns -->
-        <p id="parabens" style="display: none;"> Parabéns você matou a emilly! ESCOLHA: 2 REAL OU UM BEIJO MISTERIOSO aguarde 10 segundos para jogar novamente</p>
+        <p id="parabens" style="display: none;"> Parabéns você matou a emy!(tadinha kkkk) ESCOLHA: 2 REAIS OU UM FICANTE MISTERIOSO aguarde 10 segundos para jogar novamente</p>
         
         <!-- Botão para voltar à página principal -->
         <button id="btn-voltar" onclick="voltarParaHome()" style="display: none;">Voltar à Página Principal</button>
     </div>
+        <script>
+        let score = 0;
+        const bubble = document.getElementById('bubble');
+        const scoreDisplay = document.getElementById('score');
+        const parabensMessage = document.getElementById('parabens');
+        const gameArea = document.getElementById('game-area');
+        const btnVoltar = document.getElementById('btn-voltar');
+        
+        // Função para atualizar a posição da imagem aleatoriamente
+        function reposicionarBolha() {
+            bubble.style.top = Math.random() * (gameArea.clientHeight - 90) + 'px';
+            bubble.style.left = Math.random() * (gameArea.clientWidth - 90) + 'px';
+        }
+
+        // Função que será chamada quando o jogador clicar na imagem
+        function estourarBolha() {
+            score++;
+            scoreDisplay.innerText = 'Pontos: ' + score;
+
+            if (score >= 50) {
+                parabensMessage.style.display = 'block'; // Mostra a mensagem de parabéns
+                btnVoltar.style.display = 'block'; // Exibe o botão de voltar à página principal
+                setTimeout(resetGame, 10000); // Reinicia o jogo após 2 segundos
+            } else {
+                reposicionarBolha(); // Reposiciona a imagem aleatoriamente
+            }
+        }
+
+        // Função para reiniciar o jogo
+        function resetGame() {
+            score = 0;
+            scoreDisplay.innerText = 'Pontuação: ' + score;
+            parabensMessage.style.display = 'none'; // Esconde a mensagem de parabéns
+            btnVoltar.style.display = 'none'; // Esconde o botão de voltar
+            reposicionarBolha(); // Reposiciona a bolha para começar o jogo novamente
+        }
+
+        // Função para voltar à página principal
+        function voltarParaHome() {
+            window.location.href = "index.html"; // Redireciona para a página principal
+        }
+
+        // Inicializa o jogo com a bolha no início
+        window.onload = reposicionarBolha;
+    </script>
 
     <style>
         body {
@@ -48,26 +93,26 @@
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 650px;
-            margin-top: 20px;
+            max-width: 750px;
+            margin-top: 30px;
         }
 
         header h1 {
-            color: #4caf50;
-            font-size: 2rem;
+            color: #483D8B;
+            font-size: 30px;
             margin-bottom: 15px;
         }
 
         #intro-text {
-            font-size: 1.2rem;
-            color: #555;
+            font-size: 12px;
+            color: #483D8B;
             margin-bottom: 25px;
         }
 
         #game-area {
             width: 100%;
             height: 350px;
-            border: 2px dashed #4caf50;
+            border: 3px dashed #483D8B;
             position: relative;
             margin-top: 20px;
             background-color: #fafafa;
@@ -75,31 +120,33 @@
         }
 
         #bubble {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             position: absolute;
             cursor: pointer;
-            transition: top 0.3s, left 0.3s;
+            transition: top 0.1s, left 0.1s;
             border-radius: 50%;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px #483D8B;
         }
 
         #score {
             font-size: 1.5rem;
             margin-top: 20px;
-            color: #333;
+            color: white;
+            background-color: #483D8B;
+            border-radius: 50px;
         }
 
         #parabens {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #28a745;
+            color: #483D8B;
             margin-top: 30px;
             text-align: center;
         }
 
         #btn-voltar {
-            background-color: #007bff;
+            background-color: #483D8B;
             color: white;
             border: none;
             padding: 12px 25px;
