@@ -23,7 +23,7 @@
         <p id="score">Pontos: 0</p>
         
         <!-- Mensagem de parabéns -->
-        <p id="parabens" style="display: none;"> Parabéns você matou a emy!(tadinha kkkk) ESCOLHA: 2 REAIS OU UM FICANTE MISTERIOSO aguarde 10 segundos para jogar novamente</p>
+        <p id="parabens" style="display: none;"> Parabéns você matou a emy! ESCOLHA: 2 REAIS OU UM SELINHO MISTERIOSO  aguarde 10 segundos para jogar novamente</p>
         
         <!-- Botão para voltar à página principal -->
         <button id="btn-voltar" onclick="voltarParaHome()" style="display: none;">Voltar à Página Principal</button>
@@ -47,7 +47,7 @@
             score++;
             scoreDisplay.innerText = 'Pontos: ' + score;
 
-            if (score >= 50) {
+            if (score >=10) {
                 parabensMessage.style.display = 'block'; // Mostra a mensagem de parabéns
                 btnVoltar.style.display = 'block'; // Exibe o botão de voltar à página principal
                 setTimeout(resetGame, 10000); // Reinicia o jogo após 2 segundos
